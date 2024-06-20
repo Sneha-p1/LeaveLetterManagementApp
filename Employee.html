@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100">
+    <div class="flex bg-gradient-to-r from-blue-900 to-red-950 shadow-lg">
+        <nav >
+            <div class="flex mt-6">
+        <div class="flex">
+            <input type="button" ><img src="././Image/Menu.png" class="w-10 h-10 pb-5 pl-4 mt-1">
+            
+        </div>
+        <div>
+            <p class="ml-9 text-white text-xl ">Takeoff Tracker</p>
+        </div>
+            </div>
+    </nav>
+    </div>
+
+    <div class="flex">
+      <div class="bg-white w-52 h-full justify-center shadow-lg">
+
+            <div><a href=""><input type="button" value="Dashboard" class="ml-4 mt-10 border-0 hover:underline"></a><br><br></div>
+    
+            <div><a href="managerDashboard.html"><input type="button" value="Leave Requests" class="ml-4 border-0 hover:underline"></a><br><br></div>
+
+            <div><a href="Employee.html"><input type="button" value="Employees" class="ml-4 border-0 hover:underline"></a><br><br></div>
+
+            <div><a href=""><input type="button" value="Settings" class="ml-4 border-0 hover:underline"></a><br><br></div>
+
+        <div class="h-72"></div>
+        <div class="h-16"></div>
+      </div>
+
+        <div class="bg-white rounded shadow p-4 ml-64">
+            <h2 class="text-xl font-semibold mt-4">Employees</h2>
+            <a href="addEmployee.html"><button class="bg-blue-500 text-white mt-7 rounded hover:bg-blue-600 h-11 w-32">Add Employee</button></a> 
+
+            <h3 class="text-lg font-semibold mb-4 mt-9">Employee List</h3>
+            <table class="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th class="py-2 px-4 border-b">Name</th>
+                  <th class="py-2 px-4 border-b">Department</th>
+                  <th class="py-2 px-4 border-b">Email</th>
+                  <th class="py-2 px-4 border-b">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td class="py-2 px-4 border-b">John Doe</td>
+                  <td class="py-2 px-4 border-b">Developer</td>
+                  <td class="py-2 px-4 border-b">johndoe@gmail.com</td>
+                  <td class="py-2 px-4 border-b">
+                    <!-- <button class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600">View</button>
+                    <button class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600">Edit</button> -->
+                    <button class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Remove</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+
+</body>
+</html>
