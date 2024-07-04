@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserLogin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: url('../Image/5.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+      
+    <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg shadow-lg p-8  w-96 mx-4">
+        <h2 class="text-white text-3xl font-semibold mb-6 text-center">Login</h2>
+
+        <form action="/login" method="POST">
+            <div class="mb-4">
+                <label for="username" class="block text-white text-sm font-bold mb-2">Username</label>
+                <input id="username" name="username" class="w-full p-3 bg-white bg-opacity-20 text-white placeholder-white rounded-lg border border-transparent focus:border-blue-500 focus:bg-opacity-30 focus:outline-none" type="text" placeholder="Enter Username">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-white text-sm font-bold mb-2">Password</label>
+                <input id="password" name="password" class="w-full p-3 bg-white bg-opacity-20 text-white placeholder-white rounded-lg border border-transparent focus:border-blue-500 focus:bg-opacity-30 focus:outline-none" type="password" placeholder="Enter Password">
+            </div>
+            <button type="submit"  class="w-full p-3 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg focus:outline-none ">Login</button>
+        </form>
+        <p class="mt-6 text-center text-white">
+            Don't have an account? <a href="/Signup" class="text-blue-400 hover:text-blue-600 font-bold">Sign up</a>
+        </p>
+    </div>
+</body>
+</html>
