@@ -5,6 +5,7 @@ const app = express();
 const mongoose=require('mongoose')
 const sample =require ('./Models/SignIn.js')
 
+
 const dotenv=require('dotenv')
 dotenv.config();
 
@@ -27,6 +28,7 @@ database.once("connected",()=>
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: true }));
+
 
 
 
@@ -59,6 +61,20 @@ app.get('/myProfile', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/static', 'Userprofile.html'));
 });
 
+app.get('/leavehistory', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/static', 'leavehistory.html'));
+});
+
+app.get('/leavebalance', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/static', 'Leavebalance.html'));
+});
+
+app.get('/logout', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/static', 'logout.html'));
+});
+
+
+
 
 
 
@@ -73,7 +89,7 @@ app.post('/signup',(async(req,res) => {
         }
         else{
             const data=await sample.create(newUser)
-            res.redirect('/UserInterface')
+            res.redirect('/login')
             
         }
     }
@@ -95,7 +111,7 @@ app.post('/login',(async(req,res) => {
         }
         if (user.password===password){
             
-            console.log('loged user inside login')
+            console.log('user is logined')
             
             return res.redirect('/UserInterface')
 
@@ -109,6 +125,10 @@ app.post('/login',(async(req,res) => {
         res.status(500).send('Internal Server Error');
     }
 }))
+
+
+
+
 
 app.listen(port,() =>{
     console.log('server is running on port :'+port);
