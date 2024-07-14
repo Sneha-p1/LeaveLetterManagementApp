@@ -11,7 +11,7 @@
         <nav >
             <div class="flex mt-6">
         <div class="flex">
-            <input type="button" ><img src="././Image/Menu.png" class="w-10 h-10 pb-5 pl-4 mt-1">
+            <input type="button" ><img src="../Image/Menu.png" class="w-10 h-10 pb-5 pl-4 mt-1">
             
         </div>
         <div>
@@ -23,12 +23,12 @@
 
     <div class="flex">
       <div class="bg-white w-52 h-full justify-center shadow-lg">
-        <img src="././Image/user.png" class="w-11 h-11 ml-20 mt-7 border-2 rounded-3xl border-blue-400">
+        <img src="../Image/user.png" class="w-11 h-11 ml-20 mt-7 border-2 rounded-3xl border-blue-400">
         <p class="mt-4 ml-16">John Joe</p>
         <p class="ml-12">EMP1067780</p><br><br>
 
         <div class="flex">
-            <div><img src="./Image/filleduser.png" class="w-6 h-6 ml-2"></div>
+            <div><img src="../Image/filleduser.png" class="w-6 h-6 ml-2"></div>
             <div><a href="/myProfile"><input type="button" value="My Profile" class="ml-4 border-0 hover:underline"></a><br><br></div>
         </div>
 
@@ -38,24 +38,24 @@
         </div> -->
 
         <div class="flex">
-            <div><img src="./Image/leave.png" class="w-6 h-6 ml-2"></div>
+            <div><img src="../Image/leave.png" class="w-6 h-6 ml-2"></div>
             <div><a href="/applyleave"><input type="button" value="Apply Leave" class="ml-4 border-0 hover:underline"></a><br><br></div>
         </div>
 
             
         <div class="flex">
-            <div><img src="./Image/history.png" class="w-6 h-6 ml-2"></div>
+            <div><img src="../Image/history.png" class="w-6 h-6 ml-2"></div>
             <div><a href="/leavehistory"><input type="button" value="Leave History" class="ml-4 border-0 hover:underline"></a><br><br></div>
         </div>
 
         <div class="flex">
-            <div><img src="./Image/Balance.png" class="w-6 h-6 ml-2"></div>
+            <div><img src="../Image/Balance.png" class="w-6 h-6 ml-2"></div>
             <div><a href="/leavebalance"><input type="button" value="Leave Balance" class="ml-4 border-0 hover:underline"></a><br><br></div>
         </div>
 
 
         <div class="flex">
-            <div><img src="./Image/logout.png" class="w-6 h-6 ml-2"></div>
+            <div><img src="../Image/logout.png" class="w-6 h-6 ml-2"></div>
             <div><a href="/logout"><input type="button" value="Logout" class="ml-4 border-0 hover:underline"></a><br><br></div>
         </div>
 
@@ -65,11 +65,11 @@
 
 
       <div class="w-full h-full bg-white m-auto shadow-2xl" style="width: 55rem; height: 32rem;" >
-        <img src="././Image/persondp.jpg" alt="" class="w-26 h-32 mt-4 m-auto border-2 rounded-full border-transparent hover:border-blue-500">
-        <p class="text-2xl text-center">John Joe</p>
-        <p class="text-xl text-center"><span class="text-blue-500"> EMP1067780 &nbsp; PH: <span class="text-black text-base">9746990966</span> </span></p>
-        <form>
-            <div class="mb-4">
+        <img src="../Image/persondp.jpg" alt="" class="w-26 h-32 mt-4 m-auto border-2 rounded-full border-transparent hover:border-blue-500">
+        <!-- <p class="text-2xl text-center">John Joe</p>
+        <p class="text-xl text-center"><span class="text-blue-500"> EMP1067780 &nbsp; PH: <span class="text-black text-base">9746990966</span> </span></p> -->
+        
+            <!-- <div class="mb-4">
                  <input id=" " class="p-2 bg-opacity-20 text-sm rounded-lg border-2 focus:border-blue-500 ml-80 mt-4 " type="text" placeholder="Full Name">
             </div>
             <div class="mb-4">
@@ -82,13 +82,87 @@
             <input id=" " class="p-2 bg-opacity-20 text-sm rounded-lg border-2 focus:border-blue-500 ml-80 " type="text" placeholder="Email">
            </div>
            <button type="submit" class="p-2 w-20 bg-black hover:bg-gray-800 text-white font-bold rounded-lg ml-80">Edit</button>
-      
+       -->
+       <!-- <form action="" method="">
+       <p class="mt-16 text-center" id="username">UserName :
+        <input type="text" id="username" name="username" > 
+      </p><br>
+       <p class="text-center" id="email">UserEmail : 
+        <input type="text" id="Useremail" name="useremail" >
+       </p><br>
+       <p class="text-center" id="password">UserPassword : 
+        <input type="text" id="password" name="password" >
+       </p><br><br>
+       </form> -->
+       <!-- <div class="container mx-auto p-8 bg-white shadow-md rounded-lg ">
+        <h1 class="text-2xl font-bold mb-6 text-center">User Details</h1>
+       
+            <p class="text-lg"><strong>Username:</strong> <span id="username" name="username"></span></p>
+            <p class="text-lg"><strong>Email:</strong> <span id="useremail" name="useremail"></span></p>
+            <p class="text-lg"><strong>Password:</strong> <span id="password" name="password"></span></p>
+       
+    </div> -->
+            <h1 class="text-2xl font-bold mb-4 text-center">User Profile</h1>
+            <div id="profile-details">
+                <div class="flex justify-center mb-4">
+                    <div class="w-1/4">
+                        <!-- LEAVE EMPTY -->
+                    </div>
+                    <div class="w-1/2 text-center">
+                        <span id="name" name="name" class="block text-xl font-bold">
+                            Name: TBD
+                        </span>
+                    </div>
+                    <div class="w-1/4">
+                        <!-- LEAVE EMPTY -->
+                    </div>
+                </div>
+                <div class="flex justify-center mb-4">
+                    <div class="w-1/4">
+                        <!-- LEAVE EMPTY -->
+                    </div>
+                    <div class="w-1/2 text-center">
+                        <span id="email" name="email" class="block text-lg">
+                            Email: TBD
+                        </span>
+                    </div>
+                    <div class="w-1/4">
+                        <!-- LEAVE EMPTY -->
+                    </div>
+                </div>
+            </div>
+        
+    </div>
       </div>
 
+    <script>
+        async function fetchDetails() {
+            const url = window.location.href;
+            const id = url.split('/').pop();
 
+            // Ensure id is a valid ObjectId length (24 hex characters)
+            if (id.length !== 24 || !/^[a-fA-F0-9]{24}$/.test(username)) {
+                document.getElementById('profile-details').innerHTML = '<p class="text-red-500 text-center">Invalid user ID.</p>';
+                return;
+            }
 
+            try {
+                const response = await fetch(`/api/myProfile/${id}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch user details');
+                }
+                const data = await response.json();
+                document.getElementById('name').textContent = `Name: ${data.username}`;
+                document.getElementById('email').textContent = `Email: ${data.useremail}`;
+            } catch (error) {
+                console.error('Error fetching user details:', error);
+                document.getElementById('profile-details').innerHTML = '<p class="text-red-500 text-center">Failed to load user details.</p>';
+            }
+        }
 
-</div>
+        document.addEventListener('DOMContentLoaded', fetchDetails);
+    </script>
+
     
 </body>
 </html>

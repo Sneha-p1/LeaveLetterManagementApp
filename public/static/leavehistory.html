@@ -64,50 +64,62 @@
 
       </div>
 
-      
-<div class="mt-12 h-96 ml-52 p-8 bg-gradient-to-r from-gray-300 to-gray-200 rounded-lg shadow-xl">
-    <h2 class="text-2xl font-semibold">Leave History</h2>
-<table class=" mt-4">
-   <thead class="bg-gray-50 border-b-2 border-gray-200">
-    <tr>
-        <th>Leave Type</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Description</th>
-        <th>Posting date</th>
-        <th>Status</th>
-    </tr>
-   </thead>
-   <tbody>
-    <tr class="bg-white">
-        <td class="p-3 text-sm text-gray-700"><span class="fond-bold text-blue-500"> sick </span></td>
-        <td class="p-3 text-sm text-gray-700">20-03-24</td>
-        <td class="p-3 text-sm text-gray-700">21-03-24</td>
-        <td class="p-3 text-sm text-gray-700">Fever</td>
-        <td class="p-3 text-sm text-gray-700">10-20-24</td>
-        <td class="p-3 text-sm text-gray-700"><span class="fond-bold text-green-500">Approved</span></td> 
-    </tr>
-
-    <tr class="bg-gray-100">
-        <td class="p-3 text-sm text-gray-700"><span class="fond-bold text-blue-500"> Casual leave </span></td>
-        <td class="p-3 text-sm text-gray-700">31-03-24</td>
-        <td class="p-3 text-sm text-gray-700">31-03-24</td>
-        <td class="p-3 text-sm text-gray-700">Function</td>
-        <td class="p-3 text-sm text-gray-700">31-03-24</td>
-        <td class="p-3 text-sm text-gray-700"><span class="fond-bold text-red-500"> Rejected</span></td> 
-    </tr>
-
-    <tr class="bg-white">
-        <td class="p-3 text-sm text-gray-700"><span class="fond-bold text-blue-500">Vacation</span> </td>
-        <td class="p-3 text-sm text-gray-700">12-05-24</td>
-        <td class="p-3 text-sm text-gray-700">22-05-24</td>
-        <td class="p-3 text-sm text-gray-700">Summer vacation</td>
-        <td class="p-3 text-sm text-gray-700">12-05-24</td>
-        <td class="p-3 text-sm text-gray-700"><span class="fond-bold text-green-500">Approved</span> </td> 
-    </tr>
-   </tbody>
-</table>
-</div>
+<!--     
+<div class="mt-12 h-96 ml-52 p-8 bg-gradient-to-r from-gray-300 to-gray-200 rounded-lg shadow-xl"> -->
+    <!-- <h2 class="text-2xl font-semibold">Leave History</h2> -->
     
+
+<!-- <div class="pt-8 text-center font-semibold text-2xl">Leave History</div> -->
+
+<div class="mt-5 mx-auto w-[80%] bg-white p-6 rounded-lg">
+    <table class="w-full table-auto border-collapse text-center">
+        <thead>
+            <tr>
+                <th class="border px-4 py-2">Leave Type</th>
+                <th class="border px-4 py-2">FromDate</th>
+                <th class="border px-4 py-2">ToDate</th>
+                <th class="border px-4 py-2">Description</th>
+                <th class="border px-4 py-2">Posting Date</th>
+                <th class="border px-4 py-2">Status</th>  
+            </tr>
+        </thead>
+        <tbody id="userLeaveHistory">
+            <!-- Tasks 
+                
+            will be dynamically loaded here -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    async function history() {
+        try {
+            const response = await fetch('/leaveHistory/data');
+            const leavedet = await response.json();
+            const leavetab = document.getElementById('userLeaveHistory');
+            leavetab.innerHTML = '';
+            leavedet.forEach(leave => {
+                leavetab.innerHTML += `
+                    <tr>
+                        
+                        <td class="border px-4 py-2">${leave.leaveType}</td>
+                        <td class="border px-4 py-2">${leave.fromDate.split('T')[0]}</td>
+                        <td class="border px-4 py-2">${leave.toDate.split('T')[0]}</td>
+                        <td class="border px-4 py-2">${leave.detail}</td>
+                        <td class="border px-4 py-2">${leave.postDate}</td>
+                        <td class="border px-4 py-2">${leave.status}</td>
+                        
+                    </tr>
+                `;
+            });
+        } catch (error) {
+            console.error('Error loading ');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', history);
+</script>
+
+
 </body>
 </html>
