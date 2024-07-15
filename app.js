@@ -4,7 +4,7 @@ const app = express();
 const mongoose=require('mongoose')
 const sample =require ('./Models/SignIn.js')
 
-const LeaveRequest = require('./Models/leave.js');
+const LeaveRequest = require('./Backend/models/leave.js');
 
 
 
