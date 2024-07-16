@@ -13,13 +13,13 @@ const Navbar2 = () => {
                 <div className="flex">
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
-                <div className="flex ml-[1000px]">
+                <div className="flex ml-[900px]">
                   <a href="/manager/employees">  
                     <img src="/src/Images/developers.png" className="w-12 h-12 pb-5 pl-5 mt-1" />
                   </a>
                 </div> 
 
-                <div className="flex ml-3">
+                <div className="flex ml-4">
                   <a href="/manager/settings"> 
                     <img src="/src/Images/settings.png" className="w-12 h-12 pb-5 pl-5 mt-1" />
                   </a>

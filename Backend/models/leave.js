@@ -1,12 +1,8 @@
+// models/leave.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LeaveSchema = new Schema({
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'SignInPage', 
-    //     required: true
-    // },
     leaveType: {
         type: String,
         required: true
@@ -31,6 +27,13 @@ const LeaveSchema = new Schema({
         type: String, 
         default: 'Pending' 
     }
+    // user: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User', 
+    //     required: true
+    // }
 });
 
 module.exports = mongoose.model('Leave', LeaveSchema);
+
+

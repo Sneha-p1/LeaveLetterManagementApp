@@ -17,7 +17,7 @@ const UserDashboard = () => {
     <>
     
 <Navbar/>
-<div style={styles} class="flex">
+<div style={styles} className="flex">
   
 <UserSidebar/> 
 <LeaveLetter/>
