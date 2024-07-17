@@ -13,7 +13,7 @@ const Settings = () => {
                                 <input type="text" id="text" className="w-[300px] p-2 border rounded" placeholder="Name"/>
                             </div>
                             <div className="mt-4">
-                                <input type="password" id="text" className="w-[300px] p-2 border rounded" placeholder="Email"/>
+                                <input type="text" id="text" className="w-[300px] p-2 border rounded" placeholder="Email"/>
                             </div>
                             <div className="mt-4">
                                 <input type="password" id="confirm_password" className="w-[300px] p-2 border rounded"

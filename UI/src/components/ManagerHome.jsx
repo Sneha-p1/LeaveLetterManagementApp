@@ -81,7 +81,7 @@ const ManagerHome = () => {
     };
 
     return (
-        <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1050px]">
+        <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1077px]">
             <div className="text-2xl font-bold text-center mb-6 text-black">Leave Requests</div>
             <h3 className="text-lg font-semibold mb-4 mt-9">Pending Leave Requests</h3>
             <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
@@ -89,6 +89,7 @@ const ManagerHome = () => {
                     <tr className="bg-gray-100 text-left">
                         <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Employee</th>
                         <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Type</th>
+                        <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Details</th>
                         <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Start Date</th>
                         <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">End Date</th>
                         <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Status</th>
@@ -100,6 +101,7 @@ const ManagerHome = () => {
                         <tr key={leave._id} className="border-b border-gray-200">
                             <td className="px-6 py-4">{leave.userName}</td>
                             <td className="px-6 py-4">{leave.leaveType}</td>
+                            <td className="px-6 py-4">{leave.detail}</td>
                             <td className="px-6 py-4">{leave.fromDate.split('T')[0]}</td>
                             <td className="px-6 py-4">{leave.toDate.split('T')[0]}</td>
                             <td className="px-6 py-4">{leave.status}</td>

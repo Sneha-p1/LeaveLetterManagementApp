@@ -13,7 +13,7 @@ const Navbar3 = () => {
                 <div className="flex">
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
-                <div className="flex ml-[945px]">
+                <div className="flex ml-[860px]">
                   <a href="/admin/manage-users">  
                     <img src="/src/Images/developers.png" className="w-12 h-12 pb-5 pl-5 mt-1" />
                   </a>

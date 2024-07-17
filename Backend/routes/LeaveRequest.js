@@ -4,12 +4,13 @@ const LeaveRequest = require('../models/leave');
 // const User = require('../models/User'); 
 
 router.post('/lettersend', async (req, res) => {
-    const { leaveType, detail, fromDate, toDate } = req.body;
+    const {userName, leaveType, detail, fromDate, toDate } = req.body;
     // const userId = req.user._id;
     console.log("Received a new leave request");
 
     try {
         const newLeaveRequest = new LeaveRequest({
+            userName,
             leaveType,
             detail,
             fromDate: new Date(fromDate), // Ensure dates are correctly formatted
