@@ -80,7 +80,7 @@ const SignUP = () => {
                  name="password"
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
-                 className="w-full p-3 bg-white bg-opacity-20 text-white placeholder-white rounded-lg border border-transparent focus:border-blue-500 focus:bg-opacity-30 focus:outline-none" type="text" placeholder="Password" />
+                 className="w-full p-3 bg-white bg-opacity-20 text-white placeholder-white rounded-lg border border-transparent focus:border-blue-500 focus:bg-opacity-30 focus:outline-none" type="password" placeholder="Password" />
             </div>
 
             <label

@@ -38,5 +38,47 @@ router.get('/leaveRequests', async (req, res) => {
     }
 });
 
+
+
+
+
+
+
+// Approve leave request
+router.patch('/leaveRequests/:id/approve', async (req, res) => {
+    try {
+        const leaveRequest = await LeaveRequest.findById(req.params.id);
+        if (!leaveRequest) {
+            return res.status(404).json({ message: 'Leave request not found' });
+        }
+        leaveRequest.status = 'Approved';
+        await leaveRequest.save();
+        res.json({ message: 'Leave request approved' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Reject leave request
+router.patch('/leaveRequests/:id/reject', async (req, res) => {
+    try {
+        const leaveRequest = await LeaveRequest.findById(req.params.id);
+        if (!leaveRequest) {
+            return res.status(404).json({ message: 'Leave request not found' });
+        }
+        leaveRequest.status = 'Rejected';
+        await leaveRequest.save();
+        res.json({ message: 'Leave request rejected' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
+
+
+
+
+
 module.exports = router;
 

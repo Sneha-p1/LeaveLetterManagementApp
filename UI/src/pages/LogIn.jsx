@@ -34,10 +34,22 @@ const loginSubmit = async (e) => {
   if (res.ok) { 
     // console.log('/login resp json', data)
     const data =await res.json();
+    console.log(data)
     const userType = data.userType;
     // console.log('usertype ', userType)
+    if(data.userType==='user'){
     toast.success(`Logged in as : ${userType}`);
     return navigate("/user-Dashboard");
+  }
+    else if(data.userType==='manager'){
+      toast.success(`Logged in as : ${userType}`);
+      return navigate("/manager");
+    }
+
+    else if(data.userType==='admin'){
+      toast.success(`Logged in as : ${userType}`);
+      return navigate("/admin/manage-users");
+    }
 
   } else {
     toast.error(`Please check your credentials`);

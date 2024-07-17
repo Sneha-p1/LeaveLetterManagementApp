@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
+import Logout from './Logout';
 
 const UserSidebar = () => {
   return (
@@ -31,7 +33,10 @@ const UserSidebar = () => {
 
             <div className="flex">
                 <div><img src="/src/Images/logout.png" className="w-6 h-6 ml-2"/></div>
-                <div><a href="/Logout"><input type="button" value="Logout" className="ml-4 border-0 hover:underline" /></a><br/><br/></div>
+            <div className="ml-4 border-0 hover:underline" >
+                <Logout/>
+            </div>
+            
             </div>
         </div>
        
