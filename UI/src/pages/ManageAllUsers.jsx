@@ -1,14 +1,16 @@
 import React from 'react'
 import Navbar3 from '../components/Navbar3'
 import Manageuser from '../components/Manageuser'
+import Useradd from '../components/Useradd'
 
-const ManageUsers = () => {
+const ManageAllUsers = () => {
   return (
     <>
     <Navbar3/>
-    <Manageuser/>
+    {/* <Manageuser/> */}
+    <Useradd/>
     </>
   )
 }
 
-export default ManageUsers
+export default ManageAllUsers

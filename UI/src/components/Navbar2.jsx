@@ -1,5 +1,7 @@
 import React from 'react'
 import Logout from './Logout'
+import { MdManageAccounts } from "react-icons/md";
+import { AiFillMail } from "react-icons/ai";
 
 const Navbar2 = () => {
   return (
@@ -14,21 +16,20 @@ const Navbar2 = () => {
                 <div className="flex">
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
-                <div className="flex ml-[800px]">
+                <div className="flex ml-[880px]">
                   <a href="/manager/employees">  
-                    <img src="/src/Images/developers.png" className="w-12 h-12 pb-5 pl-5 mt-1" />
-                  </a>
-                </div> 
-
-                <div className="flex ml-4">
-                  <a href="/manager/settings"> 
-                    <img src="/src/Images/settings.png" className="w-12 h-12 pb-5 pl-5 mt-1" />
+                      <AiFillMail className='text-white w-6 h-6'/>
                   </a>
                 </div>
 
-          <div className="flex">
-                <div><img src="/src/Images/log-out.png" className="w-12 h-12 pb-5 pl-5 mt-1 ml-2"/></div>
-            <div className="ml-4 border-0 hover:underline text-white mt-2" >
+                <div className="flex ml-5 -mt-1">
+                  <a href="/manager/employees">  
+                      <MdManageAccounts className='text-white w-7 h-8'/>
+                  </a>
+                </div>
+
+          <div className="flex ml-2">
+            <div className="ml-3 border-0 hover:underline text-white mt-1" >
                 <Logout/>
             </div>
           </div>

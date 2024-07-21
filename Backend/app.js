@@ -5,6 +5,7 @@ const cors = require("cors");
 const auth = require ("./routes/auth");
 const cookieParser = require("cookie-parser");
 const leaveRequestRoutes = require("./routes/LeaveRequest");
+const leaveBalanceRoutes = require('./routes/leaveBalanceRoutes');
 app.use(cookieParser());
 
 app.use(
@@ -17,6 +18,8 @@ app.use(express.json());
 
 app.use("/", auth)
 app.use("/", leaveRequestRoutes); 
+app.use('/api', leaveBalanceRoutes);  
+
 
 const PORT = 5005;
 app.listen(PORT, () => {

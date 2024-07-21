@@ -4,8 +4,6 @@ const Employees = () => {
   return (
     <>
     <div className="bg-white rounded shadow-xl p-4 mx-auto mt-8 w-[1050px]">
-            <h2 className="text-xl font-bold mt-4">Employees</h2>
-            <a href="/manager/addemployees"><button className="bg-blue-500 text-white mt-7 rounded hover:bg-blue-600 h-11 w-32">Add Employee</button></a> 
 
             <h3 className="text-lg font-semibold mb-4 mt-9">Employee List</h3>
             <table className="min-w-full bg-white">

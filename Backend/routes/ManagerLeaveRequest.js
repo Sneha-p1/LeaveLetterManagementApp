@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const LeaveRequest = require('../models/leave');
+const LeaveRequest = require('../models/Managerleave');
 // const User = require('../models/User'); 
 
 router.post('/lettersend', async (req, res) => {
