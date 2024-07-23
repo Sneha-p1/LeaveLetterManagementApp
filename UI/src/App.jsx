@@ -10,7 +10,6 @@ import LeaveHistory from './pages/LeaveHistory'
 import LeaveBalance from './pages/LeaveBalance'
 import ManagerDashboard from './pages/ManagerDashboard'
 import EmployeeDetails from './pages/EmployeeDetails'
-import AddEmployees from './pages/AddEmployees'
 import ManageManagers from './pages/ManageManagers'
 import AddAllUsers from './pages/AddAllUsers'
 import AdminDashboard from './pages/AdminDashboard'
@@ -38,7 +37,6 @@ const App = () => {
     <Route path="/manager" element={<AuthLayout />}>
         <Route path="/manager" element={<ManagerDashboard />} />
         <Route path="/manager/employees" element={<EmployeeDetails />} />
-        <Route path="/manager/addemployees" element={<AddEmployees />} />
     </Route>
 
     <Route path="/admin" element={<AuthLayout />}>

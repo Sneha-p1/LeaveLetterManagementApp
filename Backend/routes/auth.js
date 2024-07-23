@@ -28,6 +28,11 @@ router.post("/register", async (req, res) => {
 // User login
 router.post("/login", async (req, res) => {
   try {
+
+
+
+
+    
     const { email, password } = req.body;
 
     console.log(email, password);
@@ -61,11 +66,17 @@ router.post("/login", async (req, res) => {
     });
     //  console.log('/login in the bakend res', res)
     return res;
+
+
+
+
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Login failed" });
   }
 });
+
+
 
 // Logout
 router.get("/logout", (req, res) => {

@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import img from '../Images/register.jpg';
+import { useState } from "react";
 const styles = {
     backgroundImage: `url(${img})`,
     backgroundRepeat: 'no-repeat',

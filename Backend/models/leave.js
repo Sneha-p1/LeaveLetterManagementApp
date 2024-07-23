@@ -3,12 +3,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LeaveSchema = new Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
     userName: {
         type: String,
         required: true
     },
     leaveType: {
         type: String,
+        enum: ['Casual', 'Sick', 'Annual', 'Other'],
         required: true
     },
     detail: {
@@ -28,7 +34,8 @@ const LeaveSchema = new Schema({
         default: Date.now 
     },
     status: { 
-        type: String, 
+        type: String,
+        enum: ['Pending', 'Approved', 'Rejected'], 
         default: 'Pending' 
     }
     // user: {

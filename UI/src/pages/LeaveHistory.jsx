@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import History from '../components/History'
 import UserSidebar from '../components/UserSidebar'
+import UserLeaveHistory from '../components/UserLeaveHistory'
 
 const LeaveHistory = () => {
   return (
@@ -10,7 +10,7 @@ const LeaveHistory = () => {
 <div class="flex">
   
 <UserSidebar/> 
-<History/>
+<UserLeaveHistory/>
   
 </div>
     

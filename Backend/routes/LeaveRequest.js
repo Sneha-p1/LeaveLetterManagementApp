@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const LeaveRequest = require('../models/leave');
+const auth = require('../middleware/authMiddleware')
 // const User = require('../models/User'); 
 
 router.post('/lettersend', async (req, res) => {
@@ -49,6 +50,18 @@ router.get('/leaveHistory/:userName', async (req, res) => {
         res.status(500).json({ message: 'Error fetching leave history', error });
     }
 });
+
+
+
+router.get('/history', auth, async (req, res) => {
+    try {
+        const leaves = await LeaveRequest.find({ userId: req.user._id });
+        res.json(leaves);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
 
 
 

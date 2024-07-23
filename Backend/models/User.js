@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   email: { type: String, unique: true, required: true },
   userType: { type: String,required: true },
+  schemaData: { type: mongoose.Schema.Types.ObjectId, ref: "SchemaData" },
 
 });
 

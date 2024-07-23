@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar3 from '../components/Navbar3'
-import AddallUsers from '../components/AddallUsers'
+import FormtablePage from './FormtablePage'
 
 const AddAllUsers = () => {
   return (
     <>
     <Navbar3/>
-    <AddallUsers/>
+    <FormtablePage/>
     
     </>
   )
