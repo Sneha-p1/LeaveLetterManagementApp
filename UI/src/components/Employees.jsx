@@ -21,9 +21,6 @@ const Employees = () => {
   };
 
 
-
-
-
   return (
     <>
     <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1077px]">

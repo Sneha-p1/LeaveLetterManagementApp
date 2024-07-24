@@ -45,6 +45,19 @@ router.get('/userdetails', async (req, res) => {
 });
 
 
+router.get('/users/:userType', async (req, res) => {
+  try {
+      console.log("sgdfh")
+      console.log(req.params.userType ,"hj")
+      const AllUsers = await userModel.find({ userType: req.params.userType });
+      console.log(AllUsers)
+      res.status(200).json(AllUsers);
+  } catch (error) {
+      res.status(500).json({ message: 'Error fetching leave history', error });
+  }
+});
+
+
 
 
 
