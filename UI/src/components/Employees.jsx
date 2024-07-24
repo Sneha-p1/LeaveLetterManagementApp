@@ -1,30 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Employees = () => {
+
+  const [UserDetails, setUserDetails] = useState([]);
+
+  useEffect(() => {
+      fetchUserDetails();
+  }, []);
+
+  const fetchUserDetails = async () => {
+      try {
+          console.log("tghj")
+          // const response = await axios.get('/api/UserDetails/');
+          const response = await fetch('/api/userdetails');
+          const data = await response.json()
+          setUserDetails(data);
+      } catch (error) {
+          console.error('Error fetching leave requests:', error);
+      }
+  };
+
+
+
+
+
   return (
     <>
-    <div className="bg-white rounded shadow-xl p-4 mx-auto mt-8 w-[1050px]">
-
-            <h3 className="text-lg font-semibold mb-4 mt-9">Employee List</h3>
-            <table className="min-w-full bg-white">
+    <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1077px]">
+    <div className="text-2xl font-bold text-center mb-6 text-black">Employee List</div>
+            <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
               <thead>
-                <tr>
-                  <th className="py-2 px-4 border-b">Name</th>
-                  <th className="py-2 px-4 border-b">Department</th>
-                  <th className="py-2 px-4 border-b">Email</th>
-                  <th className="py-2 px-4 border-b">Actions</th>
+                <tr className="bg-gray-100 text-left">
+                  <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Name</th>
+                  <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Department</th>
+                  <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Email</th>
+                  <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Mobile</th>
+                  <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Leave Count</th>
                 </tr>
               </thead>
-              <tbody>
-
-                <tr>
-                  <td className="py-2 px-4 border-b">John Doe</td>
-                  <td className="py-2 px-4 border-b">Developer</td>
-                  <td className="py-2 px-4 border-b">johndoe@gmail.com</td>
-                  <td className="py-2 px-4 border-b">
-                    <button className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Remove</button>
-                  </td>
-                </tr>
+              <tbody id="UserDetails">
+                {UserDetails.map(employee => (
+                     <tr key={employee._id} className="border-b border-gray-200">
+                         <td className="px-6 py-4">{employee.username}</td>
+                         <td className="px-6 py-4">{employee.userRoll}</td>
+                         <td className="px-6 py-4">{employee.email}</td>
+                         <td className="px-6 py-4">{employee.mobile}</td>
+                         <td className="px-6 py-4">{employee.count}</td>
+                     </tr>
+            ))}
               </tbody>
             </table>
           </div>

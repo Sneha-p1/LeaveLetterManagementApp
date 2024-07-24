@@ -29,4 +29,29 @@ router.delete("/delete/:id", async (req, res) => {
   res.send({ success: true, message: "Data deleted successfully", data: data });
 });
 
+
+
+
+router.get('/userdetails', async (req, res) => {
+  try {
+      console.log("sgdfh")
+      console.log("hj")
+      const Userdetails = await userModel.find();
+      console.log(Userdetails)
+      res.status(200).json(Userdetails);
+  } catch (error) {
+      res.status(500).json({ message: 'Error fetching leave history', error });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router; 
