@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import UserSidebar from '../components/UserSidebar'
-import UserLeaveHistory from '../components/UserLeaveHistory'
+import History from '../components/History'
 
 const LeaveHistory = () => {
   return (
     <>
     <Navbar/>
-<div class="flex">
+<div className="flex">
   
 <UserSidebar/> 
-<UserLeaveHistory/>
+<History/>
   
 </div>
     

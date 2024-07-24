@@ -20,14 +20,20 @@ const LeaveLetter = () => {
         };
 
         try {
+            console.log("dyutsyu")
             const token = localStorage.getItem('token');
-            const response = await axios.post('/api/lettersend', leaveRequest);
+            // const response = await axios.post('/api/lettersend', leaveRequest);
 
-            // const response = await axios.post('/api/lettersend', leaveRequest, {
-            //     headers: {
-            //         Authorization: `Bearer ${token}`
-            //     }
-            // });
+
+            const response = await fetch("/api/lettersend", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(leaveRequest),
+              });
+
+        
 
             if (response.status === 201) {
                 alert('Leave request submitted successfully');
@@ -36,7 +42,7 @@ const LeaveLetter = () => {
         } catch (error) {
             console.error('There was an error submitting the leave request!', error);
             alert('Internal Server Error');
-            window.location.href = '/user-Dashboard';
+            // window.location.href = '/user-Dashboard';
         }
     };
 
@@ -47,7 +53,7 @@ const LeaveLetter = () => {
                 <form onSubmit={handleSubmit}>
              
                 <div className="mb-4">
-                    <label className="block mb-2">From</label>
+                    <label className="block mb-2">Name</label>
                     <input
                         type="text"
                         value={userName}

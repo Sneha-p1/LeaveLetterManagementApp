@@ -13,9 +13,8 @@ router.post('/lettersend', async (req, res) => {
             userName,
             leaveType,
             detail,
-            fromDate: new Date(fromDate), // Ensure dates are correctly formatted
-            toDate: new Date(toDate) 
-            // user: userId     
+            fromDate: new Date(fromDate), 
+            toDate: new Date(toDate)     
         });
 
         await newLeaveRequest.save();

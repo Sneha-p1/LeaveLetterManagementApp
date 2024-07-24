@@ -1,15 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
 import Logout from './Logout';
 
 const UserSidebar = () => {
+
+    const [username, setUsername] = useState([]);
+   
+    useEffect(() =>{
+        const fetchUsername = async ()=>{
+            try {
+                const res = await fetch('/api/username');
+                const data = await res.json()
+                setUsername(data)
+                console.log(data,"ghgh")
+            }
+            catch (error) {
+                console.log("error", error)
+            }
+        };
+        fetchUsername()
+    },[])
+
+
+
+
   return (
     <>
    
         <div className="bg-white w-52 h-[593px] justify-center shadow-lg "><br/>
             <img src="/src/Images/user.png" className="w-11 h-11 mt-5 ml-20 border-2 rounded-3xl border-blue-400" />
-            <p className="mt-4 ml-16">John Joe</p>
-            <p className="ml-12">EMP1067780</p><br/><br/>
+              <p className="mt-4 text-center">{username}</p>
+              <br/><br/>
 
             {/* <div className="flex">
                 <div><img src="./Image/filleduser.png" className="w-6 h-6 ml-2" /></div>
