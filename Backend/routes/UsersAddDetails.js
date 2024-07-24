@@ -32,11 +32,11 @@ router.delete("/delete/:id", async (req, res) => {
 
 
 
-router.get('/userdetails', async (req, res) => {
+router.get('/userdetails/:userType', async (req, res) => {
   try {
       console.log("sgdfh")
-      console.log("hj")
-      const Userdetails = await userModel.find();
+      console.log(req.params.userType ,"hj")
+      const Userdetails = await userModel.find({ userType: req.params.userType });
       console.log(Userdetails)
       res.status(200).json(Userdetails);
   } catch (error) {

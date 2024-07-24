@@ -2,6 +2,7 @@ import React from 'react'
 import Logout from './Logout'
 import { MdManageAccounts } from "react-icons/md";
 import { AiFillMail } from "react-icons/ai";
+import { RiFolderHistoryFill } from "react-icons/ri";
 
 const Navbar2 = () => {
   return (
@@ -17,18 +18,24 @@ const Navbar2 = () => {
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
                 <div className="flex ml-[880px]">
-                  <a href="/manager/employees">  
+                  <a href="/manager/Leave">  
                       <AiFillMail className='text-white w-6 h-6'/>
+                  </a>
+              </div>
+              
+              <div className="flex ml-7">
+                  <a href="/manager/LeaveHistory">  
+                      <RiFolderHistoryFill className='text-white w-6 h-6'/>
                   </a>
                 </div>
 
-                <div className="flex ml-5 -mt-1">
+                <div className="flex ml-7 -mt-1">
                   <a href="/manager/employees">  
                       <MdManageAccounts className='text-white w-7 h-8'/>
                   </a>
                 </div>
 
-          <div className="flex ml-2">
+          <div className="flex ml-4">
             <div className="ml-3 border-0 hover:underline text-white mt-1" >
                 <Logout/>
             </div>

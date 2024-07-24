@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 const ManagerLeave = () => {
-
     const [userName, setUserName] = useState('');
     const [leaveType, setLeaveType] = useState('');
     const [detail, setDetail] = useState('');
@@ -21,30 +20,40 @@ const ManagerLeave = () => {
         };
 
         try {
+            console.log("dyutsyu")
             const token = localStorage.getItem('token');
-            const response = await axios.post('/api/lettersend', leaveRequest);
+            // const response = await axios.post('/api/lettersend', leaveRequest);
 
+
+            const response = await fetch("/api/manager/lettersend", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(leaveRequest),
+              });
+
+        
 
             if (response.status === 201) {
                 alert('Leave request submitted successfully');
-                window.location.href = '/user-Dashboard';
+                window.location.href = '/manager/Leave';
             }
         } catch (error) {
             console.error('There was an error submitting the leave request!', error);
             alert('Internal Server Error');
-            window.location.href = '/user-Dashboard';
+            // window.location.href = '/user-Dashboard';
         }
     };
-  return (
-    <>
-    
-    <div className="w-[800px] h-[570px] mt-3 ml-72 p-8 bg-gradient-to-r from-gray-300 to-gray-200 rounded-lg shadow-md w-full max-w-md shadow-xl">
+
+    return (
+        <div className="w-[800px] h-[570px] mt-3 ml-72 p-8 bg-gradient-to-r from-gray-300 to-gray-200 rounded-lg shadow-md w-full max-w-md shadow-xl">
             
                 <h2 className="mb-4 text-xl">Submit Leave Request</h2>
                 <form onSubmit={handleSubmit}>
              
                 <div className="mb-4">
-                    <label className="block mb-2">From</label>
+                    <label className="block mb-2">Name</label>
                     <input
                         type="text"
                         value={userName}
@@ -137,9 +146,7 @@ const ManagerLeave = () => {
                 </form>
             
         </div>
-  
-    </>
-  )
-}
+    );
+};
 
-export default ManagerLeave
+export default ManagerLeave;

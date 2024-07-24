@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const LeaveSchema = new Schema({
+const ManagerLeaveSchema = new Schema({
     userName: {
         type: String,
         required: true
@@ -38,6 +38,9 @@ const LeaveSchema = new Schema({
     // }
 });
 
-module.exports = mongoose.model('ManagerLeave', LeaveSchema);
+// module.exports = mongoose.model('ManagerLeave', ManagerLeaveSchema);
 
 
+const ManagerLeaveRequest = mongoose.model('ManagerLeave', ManagerLeaveSchema);
+
+module.exports = ManagerLeaveRequest;

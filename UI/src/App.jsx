@@ -15,6 +15,9 @@ import AddAllUsers from './pages/AddAllUsers'
 import AdminDashboard from './pages/AdminDashboard'
 import ManageAllUsers from './pages/ManageAllUsers'
 import LogIn from './pages/LogIn'
+import ManagerLeaveletter from './pages/ManagerLeaveletter'
+import ManagerHistory from './pages/ManagerHistory'
+import LeaveCountPage from './pages/LeaveCountPage'
 
 const App = () => {
 
@@ -30,13 +33,15 @@ const App = () => {
         <Route path="/sign-up" element={<SignUP />} />
         <Route path="/user-Dashboard" element={<UserDashboard />} />
         <Route path="/Leave-History" element={<LeaveHistory />} />
-        <Route path="/Leave-Balance" element={<LeaveBalance />} />
+        <Route path="/Leave-Balance" element={<LeaveCountPage />} />
       
     </Route>
 
     <Route path="/manager" element={<AuthLayout />}>
-        <Route path="/manager" element={<ManagerDashboard />} />
-        <Route path="/manager/employees" element={<EmployeeDetails />} />
+          <Route path="/manager" element={<ManagerDashboard />} />
+          <Route path="/manager/Leave" element={<ManagerLeaveletter />} />
+          <Route path="/manager/LeaveHistory" element={<ManagerHistory/>} />
+          <Route path="/manager/employees" element={<EmployeeDetails />} />
     </Route>
 
     <Route path="/admin" element={<AuthLayout />}>

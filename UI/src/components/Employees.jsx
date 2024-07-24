@@ -3,22 +3,29 @@ import React, { useEffect, useState } from 'react'
 const Employees = () => {
 
   const [UserDetails, setUserDetails] = useState([]);
+  const userType = ('user'); 
 
   useEffect(() => {
-      fetchUserDetails();
-  }, []);
+  //     fetchUserDetails();
+  // }, []);
 
   const fetchUserDetails = async () => {
       try {
           console.log("tghj")
-          // const response = await axios.get('/api/UserDetails/');
-          const response = await fetch('/api/userdetails');
+        // const response = await axios.get('/api/UserDetails/');
+        console.log(userType);
+          const response = await fetch(`/api/userdetails/${userType}`);
           const data = await response.json()
           setUserDetails(data);
       } catch (error) {
           console.error('Error fetching leave requests:', error);
       }
   };
+  fetchUserDetails();
+}, [userType]);
+
+
+  
 
 
   return (

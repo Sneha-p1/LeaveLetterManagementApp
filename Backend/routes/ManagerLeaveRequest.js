@@ -3,13 +3,13 @@ const router = express.Router();
 const LeaveRequest = require('../models/Managerleave');
 // const User = require('../models/User'); 
 
-router.post('/lettersend', async (req, res) => {
+router.post('/manager/lettersend', async (req, res) => {
     const {userName, leaveType, detail, fromDate, toDate } = req.body;
     // const userId = req.user._id;
     console.log("Received a new leave request");
 
     try {
-        const newLeaveRequest = new LeaveRequest({
+        const newLeaveRequest = new ManagerLeaveRequest({
             userName,
             leaveType,
             detail,
@@ -20,15 +20,15 @@ router.post('/lettersend', async (req, res) => {
         await newLeaveRequest.save();
 
         console.log('Leave request saved successfully');
-        res.status(201).send('<script>alert("Leave request submitted successfully"); window.location.href="/Leave-History";</script>');
+        res.status(201).send('<script>alert("Leave request submitted successfully"); window.location.href="/manager/Leave";</script>');
     } catch (error) {
         console.error(error);
-        res.status(500).send('<script>alert("Internal Server Error"); window.location.href="/user-Dashboard";</script>');
+        res.status(500).send('<script>alert("Internal Server Error"); window.location.href="/manager/Leave";</script>');
     }
 });
 
 
-router.get('/leaveRequests', async (req, res) => {
+router.get('/manager/leaveRequests', async (req, res) => {
     try {
         const leaveRequests = await LeaveRequest.find();
         res.status(200).json(leaveRequests);
@@ -40,7 +40,7 @@ router.get('/leaveRequests', async (req, res) => {
 
 
 // Fetch leave history for a specific user
-router.get('/leaveHistory/:userName', async (req, res) => {
+router.get('/manager/leaveHistory/:userName', async (req, res) => {
     try {
         const leaveHistory = await LeaveRequest.find({ userName: req.params.userName });
         res.status(200).json(leaveHistory);
