@@ -17,14 +17,14 @@ const Navbar2 = () => {
                 <div className="flex">
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
-                <div className="flex ml-[880px]">
+                <div className="flex ml-[840px]">
                   <a href="/manager/Leave">  
                       <AiFillMail className='text-white w-6 h-6'/>
                   </a>
               </div>
               
               <div className="flex ml-7">
-                  <a href="/manager/LeaveHistory">  
+                  <a href="/manager/Leave-History">  
                       <RiFolderHistoryFill className='text-white w-6 h-6'/>
                   </a>
                 </div>

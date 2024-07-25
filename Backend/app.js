@@ -4,10 +4,11 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const auth = require("./routes/auth");
 const leaveRequestRoutes = require("./routes/LeaveRequest");
-// const ManagerleaveRequest = require("./routes/ManagerLeaveRequest");
+const ManagerleaveRequest = require("./routes/ManagerLeaveRequest");
 const verifyToken = require("./middleware/authMiddleware");
 const userDetails = require("./routes/UsersAddDetails");
 const LeaveCount = require("./routes/Leavecount");
+const LeaveRequest = require('./models/Managerleave');
 
 
 const app = express();
@@ -28,7 +29,7 @@ app.use("/", auth)
 app.use("/", leaveRequestRoutes); 
 app.use("/", userDetails); 
 app.use("/api", LeaveCount); 
-// app.use("/manager", ManagerleaveRequest); 
+app.use("/", ManagerleaveRequest); 
 
 
 
@@ -37,8 +38,14 @@ app.get("/username", verifyToken, async (req, res) => {
   res.json(req.username);
 });
 
+app.get("/manager/username", verifyToken, async (req, res) => {
+  console.log(req.username)
+  res.json(req.username);
+});
 
-app.post('/lettersend', async (req, res) => {
+
+
+app.post('/manager/lettersend', async (req, res) => {
   const { userName, leaveType, detail, fromDate, toDate } = req.body;
   console.log("Received a new leave request");
 
@@ -63,39 +70,18 @@ app.post('/lettersend', async (req, res) => {
 
 
 
-
-
-
-
-app.post('manager/lettersend', async (req, res) => {
-  const { userName, leaveType, detail, fromDate, toDate } = req.body;
-  console.log("Received a new leave request");
-
+// Fetch leave history for a specific manager
+app.get('/manager/leaveHistory/:userName', async (req, res) => {
   try {
-      const newLeaveRequest = new ManagerLeaveRequest({
-          userName,
-          leaveType,
-          detail,
-          fromDate: new Date(fromDate), 
-          toDate: new Date(toDate)
-      });
-
-      await newLeaveRequest.save();
-
-      console.log('Leave request saved successfully');
-      res.status(201).json({ message: 'Leave request submitted successfully' });
+      console.log("gddvhdfh")
+      // console.log(req.params.userName ,"hj")
+      const leaveHistory = await LeaveRequest.find({ userName: req.params.userName });
+      console.log(leaveHistory)
+      res.status(200).json(leaveHistory);
   } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal Server Error' });
+      res.status(500).json({ message: 'Error fetching leave history', error });
   }
 });
-
-
-
-
-
-
-
 
 
 

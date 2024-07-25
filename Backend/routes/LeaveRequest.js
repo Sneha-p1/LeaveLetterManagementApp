@@ -31,7 +31,7 @@ router.post('/lettersend', async (req, res) => {
 router.get('/leaveHistory/:userName', async (req, res) => {
     try {
         console.log("sgdfh")
-        console.log(req.params.userName ,"hj")
+        // console.log(req.params.userName ,"hj")
         const leaveHistory = await LeaveRequest.find({ userName: req.params.userName });
         console.log(leaveHistory)
         res.status(200).json(leaveHistory);
@@ -48,7 +48,7 @@ router.get('/leaveHistory', async (req, res) => {
         console.log("sgdfh")
         console.log("hj")
         const leaveHistory = await LeaveRequest.find();
-        console.log(leaveHistory)
+        // console.log(leaveHistory)
         res.status(200).json(leaveHistory);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching leave history', error });

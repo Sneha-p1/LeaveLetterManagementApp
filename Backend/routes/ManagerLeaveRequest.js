@@ -9,7 +9,7 @@ router.post('/manager/lettersend', async (req, res) => {
     console.log("Received a new leave request");
 
     try {
-        const newLeaveRequest = new ManagerLeaveRequest({
+        const newLeaveRequest = new LeaveRequest({
             userName,
             leaveType,
             detail,
@@ -28,21 +28,28 @@ router.post('/manager/lettersend', async (req, res) => {
 });
 
 
-router.get('/manager/leaveRequests', async (req, res) => {
+
+// Fetch leave history for a specific manager
+router.get('/manager/leaveHistory/:userName', async (req, res) => {
     try {
-        const leaveRequests = await LeaveRequest.find();
-        res.status(200).json(leaveRequests);
+        console.log("gddvhdfh")
+        // console.log(req.params.userName ,"hj")
+        const leaveHistory = await LeaveRequest.find({ userName: req.params.userName });
+        console.log(leaveHistory)
+        res.status(200).json(leaveHistory);
     } catch (error) {
-        res.status(500).json({ message: 'Error fetching leave requests', error });
+        res.status(500).json({ message: 'Error fetching leave history', error });
     }
 });
 
 
-
-// Fetch leave history for a specific user
-router.get('/manager/leaveHistory/:userName', async (req, res) => {
+// Fetch leave history for all managers
+router.get('/manager/leaveHistory', async (req, res) => {
     try {
-        const leaveHistory = await LeaveRequest.find({ userName: req.params.userName });
+        console.log("sgdfh")
+        console.log("hj")
+        const leaveHistory = await LeaveRequest.find();
+        // console.log(leaveHistory)
         res.status(200).json(leaveHistory);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching leave history', error });
@@ -51,16 +58,23 @@ router.get('/manager/leaveHistory/:userName', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-// Approve leave request
-router.patch('/leaveRequests/:id/approve', async (req, res) => {
+router.get('/manager/leaveRequests', async (req, res) => {
     try {
+        const ManagerLeaveRequest = await LeaveRequest.find();
+        res.status(200).json(ManagerLeaveRequest);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching leave requests', error });
+    }
+});
+
+
+
+
+
+//  Approve leave request
+router.get('/manager/leaveRequests/:id/approve', async (req, res) => {
+    try {
+        console.log("ghe")
         const leaveRequest = await LeaveRequest.findById(req.params.id);
         if (!leaveRequest) {
             return res.status(404).json({ message: 'Leave request not found' });
@@ -74,7 +88,7 @@ router.patch('/leaveRequests/:id/approve', async (req, res) => {
 });
 
 // Reject leave request
-router.patch('/leaveRequests/:id/reject', async (req, res) => {
+router.get('/manager/leaveRequests/:id/reject', async (req, res) => {
     try {
         const leaveRequest = await LeaveRequest.findById(req.params.id);
         if (!leaveRequest) {

@@ -7,7 +7,6 @@ import MainLayout from './layout/MainLayout'
 import UserDashboard from './pages/UserDashboard'
 import AuthLayout from './layout/AuthLayout'
 import LeaveHistory from './pages/LeaveHistory'
-import LeaveBalance from './pages/LeaveBalance'
 import ManagerDashboard from './pages/ManagerDashboard'
 import EmployeeDetails from './pages/EmployeeDetails'
 import ManageManagers from './pages/ManageManagers'
@@ -40,7 +39,7 @@ const App = () => {
     <Route path="/manager" element={<AuthLayout />}>
           <Route path="/manager" element={<ManagerDashboard />} />
           <Route path="/manager/Leave" element={<ManagerLeaveletter />} />
-          <Route path="/manager/LeaveHistory" element={<ManagerHistory/>} />
+          <Route path="/manager/Leave-History" element={<ManagerHistory/>} />
           <Route path="/manager/employees" element={<EmployeeDetails />} />
     </Route>
 

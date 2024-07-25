@@ -10,8 +10,12 @@ const Admindashboard = () => {
 
     const fetchLeaveRequests = async () => {
         try {
-            const response = await axios.get('http://localhost:5005/ManagerleaveRequests');
-            setLeaveRequests(response.data);
+            console.log("tghj")
+            // const response = await axios.get('/api/leaveRequests/');
+            const response = await fetch('/api/manager/leaveHistory');
+            const data = await response.json()
+            setLeaveRequests(data);
+            console.log(data)
         } catch (error) {
             console.error('Error fetching leave requests:', error);
         }
@@ -19,11 +23,13 @@ const Admindashboard = () => {
 
     
 
-
-
     const handleApproveLeave = async (id) => {
+        console.log("ghdsd")
         try {
-            await axios.patch(`/api/leaveRequests/${id}/approve`);
+            // await axios.patch(`/api/leaveRequests/${id}/approve`);
+            
+            const response = await fetch(`/api/manager/leaveRequests/${id}/approve`);
+            const data = await response.json()
             setLeaveRequests(leaveRequests.map(leave =>
                 leave._id === id ? { ...leave, status: 'Approved' } : leave
             ));
@@ -34,7 +40,9 @@ const Admindashboard = () => {
 
     const handleRejectLeave = async (id) => {
         try {
-            await axios.patch(`/api/leaveRequests/${id}/reject`);
+            // await axios.patch(`/api/leaveRequests/${id}/reject`);
+            const response = await fetch(`/api/manager/leaveRequests/${id}/reject`);
+            const data = await response.json()
             setLeaveRequests(leaveRequests.map(leave =>
                 leave._id === id ? { ...leave, status: 'Rejected' } : leave
             ));
@@ -46,18 +54,9 @@ const Admindashboard = () => {
 
 
 
-
-
-
-
-
-
-
-
-
     return (
-        <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1077px]">
-            <div className="text-2xl font-bold text-center mb-6 text-black">Manager Leave Requests</div>
+        <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1160px]">
+            <div className="text-2xl font-bold text-center mb-6 text-black">Managers Leave Requests</div>
             <h3 className="text-lg font-semibold mb-4 mt-9">Pending Leave Requests</h3>
             <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
                 <thead>
@@ -80,12 +79,7 @@ const Admindashboard = () => {
                             <td className="px-6 py-4">{leave.fromDate.split('T')[0]}</td>
                             <td className="px-6 py-4">{leave.toDate.split('T')[0]}</td>
                             <td className="px-6 py-4">{leave.status}</td>
-                            {/* <td className="px-6 py-4">
-                                <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onClick={() => handleEditLeave(leave._id)}>Approve</button>
-                                <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 ml-2" onClick={() => handleDeleteLeave(leave._id)}>Reject</button>
-                            </td> */}
-
-
+                           
                                 <td className="px-6 py-4">
                                     <button
                                         className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"

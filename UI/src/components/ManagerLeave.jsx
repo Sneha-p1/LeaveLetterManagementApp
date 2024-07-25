@@ -11,7 +11,7 @@ const ManagerLeave = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const leaveRequest = {
+        const ManagerLeaveRequest = {
             userName,
             leaveType,
             detail,
@@ -30,7 +30,7 @@ const ManagerLeave = () => {
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify(leaveRequest),
+                body: JSON.stringify(ManagerLeaveRequest),
               });
 
         
@@ -42,7 +42,7 @@ const ManagerLeave = () => {
         } catch (error) {
             console.error('There was an error submitting the leave request!', error);
             alert('Internal Server Error');
-            // window.location.href = '/user-Dashboard';
+            window.location.href = '/manager/Leave';
         }
     };
 
@@ -53,7 +53,7 @@ const ManagerLeave = () => {
                 <form onSubmit={handleSubmit}>
              
                 <div className="mb-4">
-                    <label className="block mb-2">Name</label>
+                    <label className="block mb-2">Manager Name</label>
                     <input
                         type="text"
                         value={userName}
