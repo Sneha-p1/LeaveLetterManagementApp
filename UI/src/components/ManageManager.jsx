@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 
 const ManageManager = () => {
@@ -12,7 +10,6 @@ const ManageManager = () => {
       try {
         console.log("gfdhsf")
         console.log(userType);
-        // const response = await axios.get(`/api/leaveHistory/${userName}`);
         const response = await fetch(`/api/users/${userType}`);
         const data = await response.json()
         setuserDetails(data);

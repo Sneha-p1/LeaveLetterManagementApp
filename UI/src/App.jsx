@@ -2,7 +2,6 @@ import React from 'react'
 import HomePage from './pages/HomePage'
 import { createBrowserRouter, createRoutesFromElements,RouterProvider, Route, Routes, Router } from 'react-router-dom'
 import SignUP from './pages/SignUP'
-
 import MainLayout from './layout/MainLayout'
 import UserDashboard from './pages/UserDashboard'
 import AuthLayout from './layout/AuthLayout'
@@ -25,7 +24,6 @@ const App = () => {
   <>
     
      
-
     <Route path="/" element={<AuthLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/log-in" element={<LogIn/>} />

@@ -2,6 +2,7 @@ import React from 'react'
 import Logout from './Logout'
 import { MdManageAccounts } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 
 const Navbar3 = () => {
   return (
@@ -17,22 +18,22 @@ const Navbar3 = () => {
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
                 <div className="flex ml-[850px] -mt-1">
-                  <a href="/admin/manage-users">  
+                  <Link to="/admin/manage-users">  
                     <MdManageAccounts className='text-white w-8 h-8'/>
-                  </a>
+                  </Link>
                 </div> 
                 
                 <div className="flex ml-3 -mt-1">
-                  <a href="/admin/manage-managers">
+                  <Link to="/admin/manage-managers">
                     <MdManageAccounts className='text-white w-8 h-8'/>
-                  </a>
+                  </Link>
                 </div> 
 
 
                 <div className="flex ml-3 -mt-1">
-                  <a href="/admin/addallusers"> 
+                  <Link to="/admin/addallusers"> 
                     <IoPersonAdd className='text-white w-6 h-6 mt-1'/>
-                  </a>
+                  </Link>
                 </div> 
 
 

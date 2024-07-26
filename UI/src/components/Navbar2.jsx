@@ -3,6 +3,7 @@ import Logout from './Logout'
 import { MdManageAccounts } from "react-icons/md";
 import { AiFillMail } from "react-icons/ai";
 import { RiFolderHistoryFill } from "react-icons/ri";
+import { Link } from 'react-router-dom';
 
 const Navbar2 = () => {
   return (
@@ -18,21 +19,21 @@ const Navbar2 = () => {
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
 
                 <div className="flex ml-[840px]">
-                  <a href="/manager/Leave">  
+                  <Link to="/manager/Leave">  
                       <AiFillMail className='text-white w-6 h-6'/>
-                  </a>
+                  </Link>
               </div>
               
               <div className="flex ml-7">
-                  <a href="/manager/Leave-History">  
+                  <Link to="/manager/Leave-History">  
                       <RiFolderHistoryFill className='text-white w-6 h-6'/>
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="flex ml-7 -mt-1">
-                  <a href="/manager/employees">  
+                  <Link to="/manager/employees">  
                       <MdManageAccounts className='text-white w-7 h-8'/>
-                  </a>
+                  </Link>
                 </div>
 
           <div className="flex ml-4">

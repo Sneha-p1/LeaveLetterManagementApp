@@ -22,8 +22,6 @@ const UserSidebar = () => {
     },[])
 
 
-
-
   return (
     <>
    
@@ -39,17 +37,17 @@ const UserSidebar = () => {
 
             <div className="flex">
                 <div><img src="/src/Images/leave.png" className="w-6 h-6 ml-2" /></div>
-                <div><a href="/user-Dashboard"><input type="button" value="Apply Leave" className="ml-4 border-0 hover:underline" /></a><br/><br/></div>
+                <div><Link to="/user-Dashboard"><input type="button" value="Apply Leave" className="ml-4 border-0 hover:underline" /></Link><br/><br/></div>
             </div>
 
             <div className="flex">
                 <div><img src="/src/Images/history.png" className="w-6 h-6 ml-2" /></div>
-                <div><a href="/Leave-History"><input type="button" value="Leave History" className="ml-4 border-0 hover:underline" /></a><br/><br/></div>
+                <div><Link to="/Leave-History"><input type="button" value="Leave History" className="ml-4 border-0 hover:underline" /></Link><br/><br/></div>
             </div>
 
             <div className="flex">
                 <div><img src="/src/Images/Balance.png" className="w-6 h-6 ml-2" /></div>
-                <div><a href="/Leave-Balance"><input type="button" value="Leave Count" className="ml-4 border-0 hover:underline" /></a><br/><br/></div>
+                <div><Link to="/Leave-Balance"><input type="button" value="Leave Count" className="ml-4 border-0 hover:underline" /></Link><br/><br/></div>
             </div>
 
             <div className="flex">

@@ -6,13 +6,10 @@ const Employees = () => {
   const userType = ('user'); 
 
   useEffect(() => {
-  //     fetchUserDetails();
-  // }, []);
 
   const fetchUserDetails = async () => {
       try {
           console.log("tghj")
-        // const response = await axios.get('/api/UserDetails/');
         console.log(userType);
           const response = await fetch(`/api/userdetails/${userType}`);
           const data = await response.json()
@@ -39,7 +36,7 @@ const Employees = () => {
                   <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Department</th>
                   <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Email</th>
                   <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Mobile</th>
-                  <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Leave Count</th>
+                  {/* <th className="px-6 py-3 text-xs font-medium text-black uppercase tracking-wider">Leave Count</th> */}
                 </tr>
               </thead>
               <tbody id="UserDetails">
@@ -49,7 +46,7 @@ const Employees = () => {
                          <td className="px-6 py-4">{employee.userRoll}</td>
                          <td className="px-6 py-4">{employee.email}</td>
                          <td className="px-6 py-4">{employee.mobile}</td>
-                         <td className="px-6 py-4">{employee.count}</td>
+                         {/* <td className="px-6 py-4">{employee.count}</td> */}
                      </tr>
             ))}
               </tbody>

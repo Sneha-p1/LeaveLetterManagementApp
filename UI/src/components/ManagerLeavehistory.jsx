@@ -22,7 +22,7 @@ const ManagerLeavehistory = () => {
 
 
   const [leaveHistory, setLeaveHistory] = useState([]);
-  const userName = localStorage.getItem('userName'); // Replace with actual username fetching logic
+  const userName = localStorage.getItem('userName'); 
 
   useEffect(() => {
     const fetchLeaveHistory = async () => {
@@ -30,7 +30,6 @@ const ManagerLeavehistory = () => {
         console.log("gfdhsf")
         // console.log(username);
          console.log(userName);
-        // const response = await axios.get(`/api/leaveHistory/${userName}`);
         const response = await fetch(`/api/manager/leaveHistory/${username}`);
         const data = await response.json()
         setLeaveHistory(data);

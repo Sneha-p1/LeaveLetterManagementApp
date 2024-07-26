@@ -3,7 +3,6 @@ import Head from '../components/Head';
 import Home from '../components/Home';
 import Footer from '../components/Footer';
 import img from '../Images/img.jpg';
-import { Outlet } from 'react-router-dom';
 
 
 const styles = {

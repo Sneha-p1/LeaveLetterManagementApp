@@ -2,7 +2,6 @@ import React from 'react'
 import '../../src/App.css'
 import Navbar from '../components/Navbar'
 import UserSidebar from '../components/UserSidebar'
-import Footer from '../components/Footer'
 import LeaveLetter from '../components/LeaveLetter'
 import img from '../Images/UserDash.jpg';
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+
 
 const ManagerHome = () => {
     const [leaveRequests, setLeaveRequests] = useState([]);
@@ -11,7 +11,6 @@ const ManagerHome = () => {
     const fetchLeaveRequests = async () => {
         try {
             console.log("tghj")
-            // const response = await axios.get('/api/leaveRequests/');
             const response = await fetch('/api/leaveHistory');
             const data = await response.json()
             setLeaveRequests(data);
@@ -25,7 +24,6 @@ const ManagerHome = () => {
     const handleApproveLeave = async (id) => {
         console.log("ghdsd")
         try {
-            // await axios.patch(`/api/leaveRequests/${id}/approve`);
             
             const response = await fetch(`/api/leaveRequests/${id}/approve`);
             const data = await response.json()
@@ -39,7 +37,6 @@ const ManagerHome = () => {
 
     const handleRejectLeave = async (id) => {
         try {
-            // await axios.patch(`/api/leaveRequests/${id}/reject`);
             const response = await fetch(`/api/leaveRequests/${id}/reject`);
             const data = await response.json()
             setLeaveRequests(leaveRequests.map(leave =>

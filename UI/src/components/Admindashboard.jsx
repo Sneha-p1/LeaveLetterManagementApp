@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const Admindashboard = () => {
     const [leaveRequests, setLeaveRequests] = useState([]);
@@ -11,8 +10,7 @@ const Admindashboard = () => {
     const fetchLeaveRequests = async () => {
         try {
             console.log("tghj")
-            // const response = await axios.get('/api/leaveRequests/');
-            const response = await fetch('/api/manager/leaveHistory');
+            const response = await fetch('/api/manager/leaveRequests');
             const data = await response.json()
             setLeaveRequests(data);
             console.log(data)
@@ -26,7 +24,6 @@ const Admindashboard = () => {
     const handleApproveLeave = async (id) => {
         console.log("ghdsd")
         try {
-            // await axios.patch(`/api/leaveRequests/${id}/approve`);
             
             const response = await fetch(`/api/manager/leaveRequests/${id}/approve`);
             const data = await response.json()
@@ -40,7 +37,6 @@ const Admindashboard = () => {
 
     const handleRejectLeave = async (id) => {
         try {
-            // await axios.patch(`/api/leaveRequests/${id}/reject`);
             const response = await fetch(`/api/manager/leaveRequests/${id}/reject`);
             const data = await response.json()
             setLeaveRequests(leaveRequests.map(leave =>

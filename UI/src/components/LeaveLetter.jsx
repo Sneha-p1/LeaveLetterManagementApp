@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const LeaveLetter = () => {
     const [userName, setUserName] = useState('');
@@ -22,7 +21,6 @@ const LeaveLetter = () => {
         try {
             console.log("dyutsyu")
             const token = localStorage.getItem('token');
-            // const response = await axios.post('/api/lettersend', leaveRequest);
 
 
             const response = await fetch("/api/lettersend", {
