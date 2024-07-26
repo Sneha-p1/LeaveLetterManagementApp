@@ -28,7 +28,7 @@ app.use(express.json());
 app.use("/", auth)
 app.use("/", leaveRequestRoutes); 
 app.use("/", userDetails); 
-app.use("/api", LeaveCount); 
+app.use("/", LeaveCount); 
 app.use("/", ManagerleaveRequest); 
 
 
@@ -39,6 +39,12 @@ app.get("/username", verifyToken, async (req, res) => {
 });
 
 app.get("/manager/username", verifyToken, async (req, res) => {
+  console.log(req.username)
+  res.json(req.username);
+});
+
+
+app.get("/leave-count/username", verifyToken, async (req, res) => {
   console.log(req.username)
   res.json(req.username);
 });

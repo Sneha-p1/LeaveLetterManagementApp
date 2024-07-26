@@ -1,19 +1,54 @@
-// 
+// const express = require('express');
+// const router = express.Router();
+// const Leave = require('../models/leave'); // Adjust the path as necessary
+// const verifyToken = require('../middleware/authMiddleware')
+
+// // Route to get leave counts by userName
+// router.get('/leave-count/:userName',verifyToken, async (req, res) => {
+   
+//     try {
+//         const { userName } = req.params;
+//         console.log("token",token)
+
+//         const sickLeaveCount = await Leave.countDocuments({ userName, leaveType: 'sick' });
+//         const casualLeaveCount = await Leave.countDocuments({ userName, leaveType: 'casual' });
+//         const annualLeaveCount = await Leave.countDocuments({ userName, leaveType: 'annual' });
+
+//         res.json({
+//             sickLeave: sickLeaveCount,
+//             casualLeave: casualLeaveCount,
+//             annualLeave: annualLeaveCount
+//         });
+//     } catch (error) {
+//         res.status(500).json({ message: 'Error fetching leave counts', error });
+//     }
+// });
+
+// module.exports = router;
+
+
+
+
 
 
 const express = require('express');
-const LeaveRequest = require('../models/leave'); // Adjust the path as necessary
-
 const router = express.Router();
+const Leave = require('../models/leave'); // Adjust the path as necessary
+const verifyToken = require('../middleware/authMiddleware');
 
-// Get leave counts for a specific user
+// Route to get leave counts by userName
 router.get('/leave-count/:userName', async (req, res) => {
-    const userName = req.params.userName;
-
     try {
-        const sickLeaveCount = await LeaveRequest.countDocuments({ userName, leaveType: 'Sick Leave' });
-        const casualLeaveCount = await LeaveRequest.countDocuments({ userName, leaveType: 'Casual Leave' });
-        const annualLeaveCount = await LeaveRequest.countDocuments({ userName, leaveType: 'Annual Leave' });
+        const { userName } = req.params;
+        console.log("Token verified");
+        // leaveType: 'sickLeave'
+        const queryCasual = { userName: userName, leaveType: 'Casual Leave' }
+        const querySick = { userName: userName, leaveType: 'Sick Leave' }
+        const queryAnnual={ userName:userName, leaveType: 'Annual Leave'}
+        const sickLeaveCount = await Leave.countDocuments(querySick);
+        console.log("trt",sickLeaveCount)
+        const casualLeaveCount = await Leave.countDocuments(queryCasual);
+        const annualLeaveCount = await Leave.countDocuments(queryAnnual);
 
         res.json({
             sickLeave: sickLeaveCount,
@@ -21,7 +56,7 @@ router.get('/leave-count/:userName', async (req, res) => {
             annualLeave: annualLeaveCount
         });
     } catch (error) {
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ message: 'Error fetching leave counts', error });
     }
 });
 

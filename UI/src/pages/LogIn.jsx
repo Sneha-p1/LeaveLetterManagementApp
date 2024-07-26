@@ -120,6 +120,20 @@ const getUserType = () => {
     const userType = decoded.userType;
     console.log("usertype", userType);
     return userType;
-  };
+};
   
-export {LogIn as default, getUserType}
+const getUserName = () => {
+  const authToken = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("Authtoken"))
+    ?.split("=")[1];
+  console.log("documemnt.cookie vslue", authToken);
+
+  const decoded = jwtDecode(authToken);
+  console.log("decoded", decoded);
+  const userName = decoded.username;
+  console.log("userName", userName);
+  return userName;
+};
+  
+export {LogIn as default, getUserType,getUserName}

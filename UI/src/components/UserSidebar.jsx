@@ -49,7 +49,7 @@ const UserSidebar = () => {
 
             <div className="flex">
                 <div><img src="/src/Images/Balance.png" className="w-6 h-6 ml-2" /></div>
-                <div><a href="/Leave-Balance"><input type="button" value="Leave Balance" className="ml-4 border-0 hover:underline" /></a><br/><br/></div>
+                <div><a href="/Leave-Balance"><input type="button" value="Leave Count" className="ml-4 border-0 hover:underline" /></a><br/><br/></div>
             </div>
 
             <div className="flex">
