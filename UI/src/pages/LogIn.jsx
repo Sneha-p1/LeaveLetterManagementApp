@@ -48,7 +48,7 @@ const loginSubmit = async (e) => {
 
     else if(data.userType==='admin'){
       toast.success(`Logged in as : ${userType}`);
-      return navigate("/admin/manage-users");
+      return navigate("/admin");
     }
 
   } else {
