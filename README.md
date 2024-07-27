@@ -15,4 +15,10 @@
 - Employees can send leave request letter : Employees can send leave request letter to manager.
 - Leave History : The employee has access to the history of sent leave letters, and the pending status of such letters is updated upon approval or rejection by the manager.
 - Leave Count : Employees can see the count of each leave (sick leave, casual leave, annual leave) that has been sent.
+## How to install
+- git clone "[https://github.com/Sneha-p1/LeaveLetterManagementApp.git]"
+- To run : `docker compose up --build`
+## Links
+- Demo Video : "[https://drive.google.com/file/d/19B3M3wgH11TvmBUkzPOscBUzKAAg9-Oi/view?usp=drive_link]"
+- Work flow Diagram : "[https://drive.google.com/file/d/1r-B8BLztGZNY-5w4epJxRS-Qpce4qfHI/view?usp=drive_link]"
  
