@@ -87,7 +87,7 @@ const SignUP = () => {
                 htmlFor="type"
                 className="block text-white font-bold  mb-2"
               >
-                Price
+                UserType
               </label>
             <select
                 id="userType"
