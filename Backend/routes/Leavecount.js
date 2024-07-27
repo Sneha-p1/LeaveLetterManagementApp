@@ -1,36 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
-// const Leave = require('../models/leave'); // Adjust the path as necessary
-// const verifyToken = require('../middleware/authMiddleware')
-
-// // Route to get leave counts by userName
-// router.get('/leave-count/:userName',verifyToken, async (req, res) => {
-   
-//     try {
-//         const { userName } = req.params;
-//         console.log("token",token)
-
-//         const sickLeaveCount = await Leave.countDocuments({ userName, leaveType: 'sick' });
-//         const casualLeaveCount = await Leave.countDocuments({ userName, leaveType: 'casual' });
-//         const annualLeaveCount = await Leave.countDocuments({ userName, leaveType: 'annual' });
-
-//         res.json({
-//             sickLeave: sickLeaveCount,
-//             casualLeave: casualLeaveCount,
-//             annualLeave: annualLeaveCount
-//         });
-//     } catch (error) {
-//         res.status(500).json({ message: 'Error fetching leave counts', error });
-//     }
-// });
-
-// module.exports = router;
-
-
-
-
-
-
 const express = require('express');
 const router = express.Router();
 const Leave = require('../models/leave'); // Adjust the path as necessary

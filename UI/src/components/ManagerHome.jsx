@@ -51,7 +51,7 @@ const ManagerHome = () => {
 
 
     return (
-        <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1160px]">
+        <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1190px]">
             <div className="text-2xl font-bold text-center mb-6 text-black">Users Leave Requests</div>
             <h3 className="text-lg font-semibold mb-4 mt-9">Pending Leave Requests</h3>
             <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
@@ -82,7 +82,7 @@ const ManagerHome = () => {
                                         onClick={() => handleApproveLeave(leave._id)}
                                     >
                                         Approve
-                                    </button>
+                                    </button> 
                                     <button
                                         className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 ml-2"
                                         onClick={() => handleRejectLeave(leave._id)}

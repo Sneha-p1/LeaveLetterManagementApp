@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Logout from './Logout'
 import { MdManageAccounts } from "react-icons/md";
 import { AiFillMail } from "react-icons/ai";
 import { RiFolderHistoryFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
-
+import { FaUserCircle } from "react-icons/fa";
 const Navbar2 = () => {
+
+  const [username, setUsername] = useState([]);
+   
+  useEffect(() =>{
+      const fetchUsername = async ()=>{
+          try {
+              const res = await fetch('/api/username');
+              const data = await res.json()
+              setUsername(data)
+              console.log(data,"ghgh")
+          }
+          catch (error) {
+              console.log("error", error)
+          }
+      };
+      fetchUsername()
+  },[])
+
+
   return (
     <>
     <div className="flex bg-gradient-to-r from-blue-900 to-red-950 shadow-lg">
@@ -45,7 +64,17 @@ const Navbar2 = () => {
                 </div>
             </div>
         </nav>
-    </div>
+      </div>
+      
+
+      <div className='flex mt-2 ml-5 gap-2'>
+        <div>
+            <FaUserCircle  className='mt-1 w-5 h-5 '/>
+        </div>
+            <p className='text-lg text-sky-900'>{ username}</p>
+      </div>
+
+
     </>
   )
 }

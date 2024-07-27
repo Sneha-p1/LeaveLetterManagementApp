@@ -22,8 +22,6 @@ const Employees = () => {
 }, [userType]);
 
 
-  
-
 
   return (
     <>
