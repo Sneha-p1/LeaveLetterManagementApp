@@ -7,4 +7,12 @@
 - Remove and Update Employees and managers : Remove and Update employees and managers from the platform.
 - View Employees and Managers: View a separate list of all registered employees and Managers. 
 ## Manager
-### 
+- Approve or Reject the Leave letter of Employees : The Manager can view a leave request letter that the employee has sent and manager can approve or reject the request .The employees dashboard displays the message indicating approval or rejection.
+- Manager can send leave request letter : Manager can send leave request letter to admin.
+- Leave History : The manager has access to the history of sent leave letters, and the pending status of such letters is updated upon approval or rejection by the admin.
+- Employees Details : Manager can see all employee details.
+## Employee
+- Employees can send leave request letter : Employees can send leave request letter to manager.
+- Leave History : The employee has access to the history of sent leave letters, and the pending status of such letters is updated upon approval or rejection by the manager.
+- Leave Count : Employees can see the count of each leave (sick leave, casual leave, annual leave) that has been sent.
+ 
