@@ -91,16 +91,11 @@ app.get('/manager/leaveHistory/:userName', async (req, res) => {
 
 
 
-
-
-
-
-
 const PORT = 5005;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-mongoose.connect("mongodb://localhost:27017/LeaveManagement");
+mongoose.connect("mongodb://mongodb:27017/LeaveManagement");
 
 const database = mongoose.connection;
 
