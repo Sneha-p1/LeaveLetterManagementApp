@@ -52,7 +52,7 @@ const ManagerHome = () => {
 
     return (
         <div className="bg-white rounded shadow-xl p-4 mx-auto mt-10 w-[1190px]">
-            <div className="text-2xl font-bold text-center mb-6 text-black">Users Leave Requests</div>
+            <div className="text-2xl font-bold text-center mb-6 text-black">Employees Leave Requests</div>
             <h3 className="text-lg font-semibold mb-4 mt-9">Pending Leave Requests</h3>
             <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
                 <thead>

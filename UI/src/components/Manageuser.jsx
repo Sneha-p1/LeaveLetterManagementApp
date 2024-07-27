@@ -25,7 +25,7 @@ const Manageuser = () => {
 
   return (
     <div className="bg-white rounded w-[900px] mx-auto mt-10 shadow p-4 mb-6">
-      <div className="text-2xl font-bold text-center mb-6 text-black">Users Information</div>
+      <div className="text-2xl font-bold text-center mb-6 text-black">Employees Information</div>
       <h3 className="text-lg font-semibold mb-4 mt-9">Users Details</h3>
       
       <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">

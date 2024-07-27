@@ -32,7 +32,7 @@ const Navbar2 = () => {
             <div className="flex mt-4">
                 <div className="flex">
                     <input type="button"/>
-                    <img src="/src/Images/Menu.png" className="w-10 h-10 pb-5 pl-5 mt-1" />
+                 <Link to="/manager"> <img src="/src/Images/Menu.png" className="w-10 h-10 pb-5 pl-5 mt-1" /></Link>  
                 </div>
                 <div className="flex">
                     <p className="ml-9 text-white text-xl">Takeoff Tracker</p>
