@@ -18,6 +18,7 @@
 ## How to install
 - git clone https://github.com/Sneha-p1/LeaveLetterManagementApp.git
 - To run : `docker compose up --build`
+-  you can access the application in your web browser at : `http://localhost:3000`
 ## Links
 - Demo Video : https://drive.google.com/file/d/19B3M3wgH11TvmBUkzPOscBUzKAAg9-Oi/view?usp=drive_link
 - Work flow Diagram : https://drive.google.com/file/d/1r-B8BLztGZNY-5w4epJxRS-Qpce4qfHI/view?usp=drive_link
